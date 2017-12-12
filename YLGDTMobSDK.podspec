@@ -6,11 +6,15 @@ Pod::Spec.new do |s|
                    YLGDTMobSDK pod.
                    DESC
   s.author       = { "aron" => "sunweirong32@163.com" }
-  s.version      = "3.2.3"
+  s.version      = "4.6.4"
   s.source       = { :git => "https://github.com/NetEaseYouliao/YLGDTMobSDK.git", :tag => s.version }
   s.platform     = :ios, '6.0'
   s.requires_arc = false
-  s.license      = 'MIT'
+  s.license      = { :type => 'Copyright', :text => '©2017 youliao.163yun.com' }
   s.source_files = 'libYLGDTMobSDK/*.{h,m}'
   s.vendored_libraries  = 'libYLGDTMobSDK/libYLGDTMobSDK.a'
+
+  s.framework = 'Foundation','UIKit'
+  s.weak_frameworks = 'AdSupport','CoreLocation','QuartzCore','CoreText','CoreGraphics','StoreKit','SystemConfiguration','Security','CoreTelephony'
+
 end
