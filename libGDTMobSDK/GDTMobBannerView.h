@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "GDTSDKDefines.h"
 
 /**
  *  广点通推荐尺寸,开发者在嵌入Banner条时，可以手动设置Banner条的宽度用来满足场景需求，
@@ -75,6 +76,8 @@
 
 @interface GDTMobBannerView : UIView
 
+
+
 /**
  *  父视图
  *  详解：[必选]需设置为显示广告的UIViewController
@@ -109,14 +112,21 @@
 
 /**
  *  构造方法
+ *  详解：appkey是应用id
+ *       placementId是广告位id
+ */
+- (id)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId;
+
+/**
+ *  构造方法
  *  详解：frame是广告banner展示的位置和大小，包含四个参数(x, y, width, height)
  *       appkey是应用id
  *       placementId是广告位id
  */
-- (id) initWithFrame:(CGRect)frame appkey:(NSString *)appkey placementId:(NSString *)placementId;
+- (id)initWithFrame:(CGRect)frame appkey:(NSString *)appkey placementId:(NSString *)placementId;
 
 /**
  *  拉取并展示广告
  */
-- (void) loadAdAndShow;
+- (void)loadAdAndShow;
 @end

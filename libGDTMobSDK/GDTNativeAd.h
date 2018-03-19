@@ -15,6 +15,7 @@ extern NSString* const GDTNativeAdDataKeyIconUrl;
 extern NSString* const GDTNativeAdDataKeyImgUrl;
 extern NSString* const GDTNativeAdDataKeyAppRating;
 extern NSString* const GDTNativeAdDataKeyAppPrice;
+extern NSString* const GDTNativeAdDataKeyImgList;
 
 @interface GDTNativeAdData : NSObject
 
@@ -28,8 +29,21 @@ extern NSString* const GDTNativeAdDataKeyAppPrice;
  *          4. GDTNativeAdDataKeyImgUrl     大图Url
  *          5. GDTNativeAdDataKeyAppRating  应用类广告的星级
  *          6. GDTNativeAdDataKeyAppPrice   应用类广告的价格
+ *          7. GDTNativeAdDataKeyImgList    三小图广告的图片集合
  */
 @property (nonatomic, retain, readonly) NSDictionary *properties;
+/*
+ *  判断两个原生广告数据对象是否相等
+ */
+-(BOOL) equalsAdData:(GDTNativeAdData *)data;
+/*
+ *  获取该原生广告是否为应用类广告
+ */
+-(BOOL) isAppAd;
+/*
+ *  获取该原生广告是否为三小图广告，当为三小图广告时，可以通过GDTNativeAdDataKeyImgList获取三张图片资源供渲染
+ */
+-(BOOL) isThreeImgsAd;
 
 @end
 

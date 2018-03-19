@@ -89,12 +89,12 @@
  *  GPS精准广告定位模式开关,默认Gps关闭
  *  详解：[可选]GPS精准定位模式开关，YES为开启GPS，NO为关闭GPS，建议设为开启，可以获取地理位置信息，提高广告的填充率，增加收益。
  */
-@property(nonatomic, assign) BOOL isGpsOn;
+@property (nonatomic, assign) BOOL isGpsOn;
 
 /**
  *  插屏广告预加载是否完成
  */
-@property (nonatomic) BOOL isReady;
+@property (nonatomic, assign) BOOL isReady;
 
 /**
  *  委托对象
@@ -105,18 +105,18 @@
  *  构造方法
  *  详解：appkey是应用id, placementId是广告位id
  */
--(id)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId;
+- (id)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId;
 
 /**
  *  广告发起请求方法
  *  详解：[必选]发起拉取广告请求
  */
--(void)loadAd;
+- (void)loadAd;
 
 /**
  *  广告展示方法
  *  详解：[必选]发起展示广告请求, 必须传入用于显示插播广告的UIViewController
  */
--(void)presentFromRootViewController:(UIViewController *)rootViewController;
+- (void)presentFromRootViewController:(UIViewController *)rootViewController;
 
 @end

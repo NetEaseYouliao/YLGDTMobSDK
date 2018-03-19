@@ -26,7 +26,7 @@
 - (void)nativeExpressAdFailToLoad:(GDTNativeExpressAd *)nativeExpressAd error:(NSError *)error;
 
 /**
- * 原生模板广告渲染成功
+ * 原生模板广告渲染成功, 此时的 nativeExpressAdView.size.height 根据 size.width 完成了动态更新。
  */
 - (void) nativeExpressAdViewRenderSuccess:(GDTNativeExpressAdView *)nativeExpressAdView;
 
@@ -66,7 +66,7 @@
 - (void)nativeExpressAdViewWillDissmissScreen:(GDTNativeExpressAdView *)nativeExpressAdView;
 
 /**
- * 全屏广告页关闭
+ * 全屏广告页将要关闭
  */
 - (void)nativeExpressAdViewDidDissmissScreen:(GDTNativeExpressAdView *)nativeExpressAdView;
 
@@ -84,12 +84,24 @@
  */
 @property (nonatomic, weak) id<GDTNativeExpressAdDelegete> delegate;
 
+
+/**
+ *  非 WiFi 网络，是否自动播放。默认 NO。loadAd 前设置。
+ */
+
+@property (nonatomic, assign) BOOL videoAutoPlayOnWWAN;
+
+/**
+ *  自动播放时，是否静音。默认 YES。loadAd 前设置。
+ */
+@property (nonatomic, assign) BOOL videoMuted;
+
 /**
  *  构造方法
  *  详解：appkey是应用id, placementId是广告位id, adSize是广告展示的宽高(具体参看联盟广告位配置)
  */
--(instancetype)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId adSize:(CGSize)size;
+- (instancetype)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId adSize:(CGSize)size;
 
-- (void)loadAd:(int)count;
+- (void)loadAd:(NSInteger)count;
 
 @end

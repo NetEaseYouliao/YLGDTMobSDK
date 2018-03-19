@@ -14,7 +14,7 @@
 /**
  * 是否渲染完毕
  */
-@property (nonatomic, assign) BOOL    isReady;
+@property (nonatomic, assign, readonly) BOOL isReady;
 
 /*
  *  viewControllerForPresentingModalView
