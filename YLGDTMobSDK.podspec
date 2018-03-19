@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
 
   s.framework = 'Foundation','UIKit'
   s.weak_frameworks = 'AdSupport','CoreLocation','QuartzCore','CoreText','CoreGraphics','StoreKit','SystemConfiguration','Security','CoreTelephony'
-  s.libraries = 'z'
+  s.libraries = 'z', 'xml2'
 end
