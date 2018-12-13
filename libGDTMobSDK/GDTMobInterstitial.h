@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "GDTSDKDefines.h"
 
 @class GDTMobInterstitial;
 
@@ -103,9 +104,10 @@
 
 /**
  *  构造方法
- *  详解：appkey是应用id, placementId是广告位id
+ *  详解：appId - 媒体 ID
+ *       placementId - 广告位 ID
  */
-- (id)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId;
+- (instancetype)initWithAppId:(NSString *)appId placementId:(NSString *)placementId;
 
 /**
  *  广告发起请求方法
@@ -118,5 +120,8 @@
  *  详解：[必选]发起展示广告请求, 必须传入用于显示插播广告的UIViewController
  */
 - (void)presentFromRootViewController:(UIViewController *)rootViewController;
+
+#pragma mark - DEPRECATED
+- (instancetype)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId GDT_DEPRECATED_MSG_ATTRIBUTE("use initWithAppId:placementId: instead.");
 
 @end

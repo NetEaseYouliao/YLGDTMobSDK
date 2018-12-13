@@ -7,24 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GDTSDKDefines.h"
 
 @interface GDTSDKConfig : NSObject
 /**
  * 提供给聚合平台用来设定SDK 流量分类
  */
-+ (void) setSdkSrc:(NSString *)sdkSrc;
++ (void)setSdkSrc:(NSString *)sdkSrc;
 
 /**
  * 查看SDK流量来源
  */
-+ (NSString *) sdkSrc;
++ (NSString *)sdkSrc;
+
+
+
+/**
+ * 获取 SDK 版本
+ */
+
++ (NSString *)sdkVersion;
+
+
+
+#pragma mark - DEPRECATED
 
 /**
  *  打开HTTPS开关
- *  详解：供流量方设置以使用并获取HTTPS接口和资源，用以支持苹果ATS政策，请在调用广告接口之前设置为true
- *      默认为关闭状态，返回http资源
+ *  详解：默认提供 HTTPS 资源，此方法废弃，请尽早删除。
+ *
  */
-+ (void) setHttpsOn;
-
++ (void)setHttpsOn GDT_DEPRECATED_MSG_ATTRIBUTE("");
 
 @end
